@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        
+          <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+          <style>
+        
+        
+        body
+            {
+                background-color:#007CC7 ;
+                color: #EEFBFB;
+            }
+
+            .design
+            {
+                background-color: #4DA8DA;
+                color:#EEFBFB ;
+                height: 300px;
+                width: 905px;
+            }
+
+            .btn
+            {
+                background-color:  #203647;
+                color: #EEFBFB;
+                border-radius: 7px;
+                height: 50px;
+                width: 70px;
+            }
+
+            .btn:hover
+            {
+                background-color: #007CC7;
+                color:  #EEFBFB;
+                border-radius: 7px;
+            }
+
+            input
+            {
+             background-color:  #EEFBFB;
+             color:#12232E ;
+             height: 55px;
+             width: 700px;
+             margin: auto;
+            }
+           .key
+            {
+              position:absolute;
+              display: block;
+              height: 40px;
+              width:40px;
+              border-radius: 12px;
+              background: linear-gradient(135deg  #EEFBFB #A3BCB6),linear-gradient(180deg #A3BCB6 #EEFBFB);
+             
+            }    
+            .key::before
+            {
+              height: 50px;
+              width: 50px;
+              padding: 8px;
+              border-radius: 12px;
+              position:absolute;
+              padding-top: 5px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-bottom:20px;
+              font-size: 15px;
+              font-weight: bold;
+              color: #214a4d;
+              background: linear-gradient(135deg  #EEFBFB #A3BCB6),linear-gradient(180deg #A3BCB6 #EEFBFB);
+            }        
+        </style>
+    </head>
+    <body>
+        <script>
+       var a=0; 
+       var val;
+       var b=0;
+            function operator(){
+              
+             val= document.getElementById("val3").value;
+             
+             console.log(val);
+            }
+            function tyre1(){
+              
+             a= document.getElementById("val1").value ;
+            
+             console.log(a);
+            }
+            function tyre2(){
+              
+            b =document.getElementById("val2").value;
+            console.log(b);
+            }
+           var c= 1;
+           var Result;  
+           function con(a,val,b)
+           {
+          
+             switch(val)
+             {
+               case ('add'):                            
+                   Result =a+b; 
+                   
+                 break;
+                break;
+                case  ("sub") :                   
+                  Result= a-b;
+                 break;
+                break;
+                case (val ="mul" ):
+                  Result= a*b;
+                 break;
+                case ("divide"):
+                  Result= a/b;
+                 break;
+                case ("power") : 
+                  for(var i=0;i<b;i++)
+                  {
+                      c=c*a;
+                  }
+                  Result= c;
+                 break;
+                case ("squareaddition"):
+                  Result = (a*a)+(b*b); 
+                 break;
+                case ("squaresubtraction"):
+                  Result  = (a*a)-(b*b); 
+                 break;
+                case ("percentage"):
+                  Result = a/b*100;
+                 break;
+                case ("square"):
+                  Result = a*a;
+                 break;
+                case ("cube"):
+                  Result = a*a*a;
+                 break;
+                 default:
+                   Result= "Choose from options";
+                   break;
+            }    
+                 console.log(Result);  
+              
+            }
+            function calc(){
+              con(a,val,b);
+            document.getElementById("answer").value = Result;      
+            }
+           
+          </script>
+     <div>   
+        <h1>Welcome to Calculator.</h1>
+     <div>
+        
+         <div id="design" >
+             <input type="tel" placeholder="Enter value1" id="val1" pattern="[0-9]">
+              <button class="btn" onclick="tyre1()">SUBMIT</button>
+             <br>
+             <br>
+             
+             <input  placeholder="CHOOSE: add, sub, mul, divide, power, squareaddition, squaresubtraction, percentage, square, cube" id="val3" >
+             <button class="btn" onclick="operator()" >SUBMIT</button>
+             <br>
+             <br>
+             <input type="tel" placeholder="Enter value 2 (if applicable)" id="val2">
+             <button class="btn" onclick="tyre2()">SUBMIT</button>
+             <br>
+             <br>
+             <button class="btn" onclick='calc()'>ANSWER</button><br>
+             <H2>RESULT:</H2>
+             <input id="answer" value=""> 
+             
+         </div>
+     </div>
+         
+     </div>
+    </body>
+</html>
